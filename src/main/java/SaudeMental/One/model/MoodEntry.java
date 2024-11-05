@@ -1,6 +1,7 @@
 package SaudeMental.One.model;
 
-import java.time.LocalDate;
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,13 +15,15 @@ public class MoodEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate date;
+    private Date date;
 
     private String emotion;
 
     private String notes;
 
     private int intensity;
+
+    private User user;
 
     public Long getId() {
         return id;
@@ -30,11 +33,11 @@ public class MoodEntry {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -60,6 +63,14 @@ public class MoodEntry {
 
     public void setIntensity(int intensity) {
         this.intensity = intensity;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     
